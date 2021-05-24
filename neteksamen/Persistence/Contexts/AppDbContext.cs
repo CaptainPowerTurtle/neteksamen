@@ -31,7 +31,7 @@ namespace neteksamen.model
 
             builder.Entity<Category>().HasData
             (
-                new Category { ID = 100, Name = "Hardware" , Desc = "Super Nice"}, // Id set manually due to in-memory provider
+                new Category { ID = 100, Name = "Hardware" , Desc = "Super Nice"},
                 new Category { ID = 200, Name = "Software", Desc = "I Cry" }
             );
 
@@ -48,7 +48,7 @@ namespace neteksamen.model
 
             builder.Entity<Supplier>().HasData
             (
-                new Supplier { ID = 100, Name = "Super Supplier", Address = "Slagelse", ZipCode = "4200", ContactPerson = "Morten", Email = "morten@super.dk", Phone = "1234567890" }, // Id set manually due to in-memory provider
+                new Supplier { ID = 100, Name = "Super Supplier", Address = "Slagelse", ZipCode = "4200", ContactPerson = "Morten", Email = "morten@super.dk", Phone = "1234567890" },
                 new Supplier { ID = 200, Name = "Small Supplier", Address = "Slagelse", ZipCode = "4200", ContactPerson = "Morten", Email = "morten@super.dk", Phone = "1234567890" }
             );
 
@@ -57,7 +57,7 @@ namespace neteksamen.model
             builder.Entity<Product>().Property(p => p.ID).IsRequired().ValueGeneratedOnAdd();
             builder.Entity<Product>().Property(p => p.Name).IsRequired().HasMaxLength(50);
             builder.Entity<Product>().Property(p => p.Desc).IsRequired().HasMaxLength(100);
-            builder.Entity<Product>().Property(p => p.QuantityInPackage).IsRequired();
+            builder.Entity<Product>().Property(p => p.AmountInPackage).IsRequired();
             builder.Entity<Product>().Property(p => p.UnitOfMeasurement).IsRequired();
             builder.Entity<Product>().Property(p => p.Price).IsRequired();
             builder.Entity<Product>().Property(p => p.Stock).IsRequired();
@@ -69,7 +69,7 @@ namespace neteksamen.model
             ID = 100,
             Name = "Apple",
             Desc = "Juicy Apple",
-            QuantityInPackage = 6,
+            AmountInPackage = 6,
             UnitOfMeasurement = EUnitOfMeasurement.Amount,
             Price = 20,
             Stock = 200,
@@ -81,7 +81,7 @@ namespace neteksamen.model
             ID = 101,
             Name = "Milk",
             Desc = "Milk from the farm",
-            QuantityInPackage = 2,
+            AmountInPackage = 2,
             UnitOfMeasurement = EUnitOfMeasurement.Liter,
             Price = 7,
             Stock = 50,

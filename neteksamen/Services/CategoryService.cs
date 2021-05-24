@@ -38,7 +38,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new CategoryResponse($"An error occurred when trying to finde the category: {ex.Message}");
             }
         }
@@ -53,7 +52,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new CategoryResponse($"An error occurred when saving the category: {ex.Message}");
             }
         }
@@ -76,7 +74,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new CategoryResponse($"An error occurred when updating the category: {ex.Message}");
             }
         }
@@ -96,7 +93,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new CategoryResponse($"An error occurred when deleting the category: {ex.Message}");
             }
         }

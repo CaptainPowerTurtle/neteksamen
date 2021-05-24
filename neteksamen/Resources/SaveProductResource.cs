@@ -18,7 +18,7 @@ namespace neteksamen.Resources
         [Range(1,5)]
         public int UnitOfMeasurement { get; set; }
         [Required]
-        public short QuantityInPackage { get; set; }
+        public int AmountInPackage { get; set; }
         [Required]
         public decimal Price { get; set; }
         [Required]

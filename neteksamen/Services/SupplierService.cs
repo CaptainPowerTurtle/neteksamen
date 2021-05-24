@@ -39,7 +39,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new SupplierResponse($"An error occurred when trying to finde the supplier: {ex.Message}");
             }
         }
@@ -55,7 +54,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new SupplierResponse($"An error occurred when saving the supplier: {ex.Message}");
             }
         }
@@ -82,7 +80,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new SupplierResponse($"An error occurred when updating the supplier: {ex.Message}");
             }
         }
@@ -102,7 +99,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new SupplierResponse($"An error occurred when deleting the supplier: {ex.Message}");
             }
         }

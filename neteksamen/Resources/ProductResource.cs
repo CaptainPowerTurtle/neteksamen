@@ -11,7 +11,7 @@ namespace neteksamen.Resources
         public string Name { get; set; }
         public string Desc { get; set; }
         public string UnitOfMeasurement { get; set; }
-        public short QuantityInPackage { get; set; }
+        public int AmountInPackage { get; set; }
         public decimal Price { get; set; }
         public int Stock { get; set; }
         public CategoryResource Category { get; set; }

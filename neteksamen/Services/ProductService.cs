@@ -39,7 +39,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new ProductResponse($"An error occurred when trying to find the product: {ex.Message}");
             }
         }
@@ -55,7 +54,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new ProductResponse($"An error occurred when saving the product: {ex.Message}");
             }
         }
@@ -68,7 +66,7 @@ namespace neteksamen.Services
 
             existingProduct.Name = product.Name;
             existingProduct.Desc = product.Desc;
-            existingProduct.QuantityInPackage = product.QuantityInPackage;
+            existingProduct.AmountInPackage = product.AmountInPackage;
             existingProduct.UnitOfMeasurement = product.UnitOfMeasurement;
             existingProduct.Price = product.Price;
             existingProduct.Stock = product.Stock;
@@ -84,7 +82,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new ProductResponse($"An error occurred when updating the product: {ex.Message}");
             }
         }
@@ -104,7 +101,6 @@ namespace neteksamen.Services
             }
             catch (Exception ex)
             {
-                // Do some logging stuff
                 return new ProductResponse($"An error occurred when deleting the product: {ex.Message}");
             }
         }

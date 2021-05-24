@@ -12,7 +12,7 @@ namespace neteksamen.model
         public string Name { get; set; }
         public string Desc { get; set; }
         public EUnitOfMeasurement UnitOfMeasurement { get; set; }
-        public short QuantityInPackage { get; set; }
+        public int AmountInPackage { get; set; }
         public  decimal Price { get; set; }
         public Category  Category { get; set; }
         public int CategoryId { get; set; }
