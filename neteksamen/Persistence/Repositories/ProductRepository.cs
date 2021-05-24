@@ -27,6 +27,10 @@ namespace neteksamen.Persistence.Repositories
         {
             return await _context.Products.FindAsync(id);
         }
+        public async Task<Product> ListByIdAsync(int id)
+        {
+            return await _context.Products.Include(p => p.Category).Include(p => p.Supplier).SingleOrDefaultAsync(x => x.ID == id);
+        }
 
         public void Update(Product product)
         {

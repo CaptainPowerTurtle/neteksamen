@@ -24,6 +24,26 @@ namespace neteksamen.Services
         {
             return await _productRepository.ListAsync();
         }
+
+        public async Task<ProductResponse> ListByIdAsync(int id)
+        {
+            var existingProduct = await _productRepository.ListByIdAsync(id);
+
+            if (existingProduct == null)
+                return new ProductResponse("Product not found.");
+
+            try
+            {
+
+                return new ProductResponse(existingProduct);
+            }
+            catch (Exception ex)
+            {
+                // Do some logging stuff
+                return new ProductResponse($"An error occurred when trying to find the product: {ex.Message}");
+            }
+        }
+
         public async Task<ProductResponse> SaveAsync(Product product)
         {
             try

@@ -8,8 +8,8 @@ namespace neteksamen.Enum
 {
     public enum EUnitOfMeasurement : byte
     {
-        [Description("UN")]
-        Unity = 1,
+        [Description("Amount")]
+        Amount = 1,
 
         [Description("MG")]
         Milligram = 2,

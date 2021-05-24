@@ -24,6 +24,26 @@ namespace neteksamen.Services
         {
             return await _supplierRepository.ListAsync();
         }
+
+        public async Task<SupplierResponse> ListByIdAsync(int id)
+        {
+            var existingSupplier = await _supplierRepository.FindByIdAsync(id);
+
+            if (existingSupplier == null)
+                return new SupplierResponse("Supplier not found.");
+
+            try
+            {
+
+                return new SupplierResponse(existingSupplier);
+            }
+            catch (Exception ex)
+            {
+                // Do some logging stuff
+                return new SupplierResponse($"An error occurred when trying to finde the supplier: {ex.Message}");
+            }
+        }
+
         public async Task<SupplierResponse> SaveAsync(Supplier supplier)
         {
             try

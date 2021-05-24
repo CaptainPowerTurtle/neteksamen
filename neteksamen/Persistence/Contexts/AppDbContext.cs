@@ -70,7 +70,7 @@ namespace neteksamen.model
             Name = "Apple",
             Desc = "Juicy Apple",
             QuantityInPackage = 6,
-            UnitOfMeasurement = EUnitOfMeasurement.Unity,
+            UnitOfMeasurement = EUnitOfMeasurement.Amount,
             Price = 20,
             Stock = 200,
             CategoryId = 100,

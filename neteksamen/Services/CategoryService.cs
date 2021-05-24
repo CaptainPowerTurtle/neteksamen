@@ -24,6 +24,24 @@ namespace neteksamen.Services
         {
             return await _categoryRepository.ListAsync();
         }
+        public async Task<CategoryResponse> ListByIdAsync(int id)
+        {
+            var existingCategory = await _categoryRepository.FindByIdAsync(id);
+
+            if (existingCategory == null)
+                return new CategoryResponse("Category not found.");
+
+            try
+            {
+
+                return new CategoryResponse(existingCategory);
+            }
+            catch (Exception ex)
+            {
+                // Do some logging stuff
+                return new CategoryResponse($"An error occurred when trying to finde the category: {ex.Message}");
+            }
+        }
         public async Task<CategoryResponse> SaveAsync(Category category)
         {
             try

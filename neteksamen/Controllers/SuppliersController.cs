@@ -36,6 +36,18 @@ namespace neteksamen.Controllers
             return resources;
         }
 
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetByIdAsync(int id)
+        {
+            var result = await _supplierService.ListByIdAsync(id);
+
+            if (!result.Success)
+                return BadRequest(result.Message);
+
+            var supplierResource = _mapper.Map<Supplier, SupplierResource>(result.Supplier);
+            return Ok(supplierResource);
+        }
+
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] SaveSupplierResource resource)
         {
